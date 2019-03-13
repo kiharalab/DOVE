@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+# turns pdb file containing only ATOM lines from multiple chains into one with a single 'chain'
+# also renumbers atoms
+# assumes all lines are ATOM lines
+# assumes no ATOMs are intentionally missing
+
+import sys
+import os
+
+curatom = 1
+curres = 500
+resstr = None
+
+
+chainid = os.environ.get("outchain")
+if chainid is None:
+	chainid = "A"
+#if "outchain" in os.environ:
+
+for line in sys.stdin:
+	if not line.startswith("ATOM"):
+		continue
+	line = line[:-1]
+
+	if (resstr is None) or (resstr != line[22:26]):
+		resstr = line[22:26]
+		curres += 1
+	
+	line = line[:6] + ("%5d" % curatom) + line[11:]
+	line = line[:22] + (" %-4d" % curres) + line[27:]
+	line = line[:21] + chainid + line[22:]
+	
+	print (line)
+	curatom += 1
+

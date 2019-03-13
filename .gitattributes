@@ -1,0 +1,8 @@
+Best_Model/ filter=lfs diff=lfs merge=lfs -text
+Best_Model/atom40/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Best_Model/atomgoapitscore/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Best_Model/goap/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Best_Model/goapitscore/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Best_Model/itscore/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Best_Model/atom20/Best_Model.h5 filter=lfs diff=lfs merge=lfs -text
+Goap/ filter=lfs diff=lfs merge=lfs -text
