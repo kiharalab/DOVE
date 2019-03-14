@@ -60,7 +60,8 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 //######################################################################################
 	function init(){
 	//making the objects to show and hide:
-	text1=new makeObj('divText1')
+	text1=new makeObj('divText1');
+	checkResult();
 	}
 //-->
 
@@ -100,7 +101,6 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 
 <tr>
 <td colspan="5">
-
 <strong><font size=4 > Dove Result  </font></strong>
 <p>
 
@@ -112,34 +112,49 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
    <td colspan="5">
     <?php
   /* set upload directory */
-    $dest_dir='uploads';
+    $dest_dir=getcwd();
+
+    $dest_dir=$dest_dir.'/uploads';
 
     /* test directory exists or not */
-    if( !is_dir($dest_dir) || !is_writeable($dest_dir) )
-    {
-     mkdir($dest_dir);
+    if(!file_exists($dest_dir)){
+
+        $status=mkdir($dest_dir);
+        $cmd = system("chmod 777 ".$dest_dir,$ret);
     }
-    $upfile=&$HTTP_POST_FILES['file'];
+    $upfile=$_FILES["file"];
     $type=array("pdb");
     function fileext($filename)
     {
         return substr(strrchr($filename, '.'), 1);
     }
     if( !in_array( strtolower( fileext($upfile['name'] ) ),$type) )
-     {
+     {  $upload_type=strtolower( fileext($upfile['name'] ) );
+        echo "Your updated file:",$upfile['name'],"  file type:",$upload_type,"<br>";
         $text=implode(",",$type);
         echo "We only support the following type files: ",$text,"<br>";
-
+        echo "[<a href=\"index.html\">Resubmit</a>]";
+        return;
      }
     else
-     {
-        $dest=$dest_dir.'/'.date("ymdHis")."_".$upfile['name'];
+     {$addtime=date("Ymd",time());
+      $dest_dir=$dest_dir.'/'.$addtime;
+      if(!file_exists($dest_dir)){
+
+        $status=mkdir($dest_dir);
+        $cmd = system("chmod 777 ".$dest_dir,$ret);
+    }
+        $dest=$dest_dir.'/'.$upfile['name'];
         $state=move_uploaded_file($upfile['tmp_name'],$dest);
      }
      /* Move file finished then we need to use python to get the results*/
-     echo("Congratulations, job has been submitted, please wait around 2-5 minutes!\n");
+     echo("Congratulations, job has been submitted, please wait around 2-5 minutes!<br>");
+     echo "Your submitted file:",$upfile['name'],"<br>";
      $rand_id=rand(1000000, 9999999);
-     $cmd = system("module load slurm; python Dove_Pred/run_slurm.py -F={$dest} --id={$rand_id}",$ret);
+     $current_path=getcwd();
+     $code_path=$current_path.'/Dove_Pred';
+     chdir($code_path);
+     $cmd = system("nohup /usr/bin/python3 main.py -F={$dest} --id={$rand_id} --mode=0 >>/tmp/logdove.txt &",$ret);
     /* Use ajax to wait*/
     function retrieve($url)
 {
@@ -148,9 +163,13 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
  }
  $file_name=retrieve($dest);
  $pdb_id=substr($file_name,0, -4);
-    $Result_path=$dest.'/'.$pdb_id.$random_id.'/'.$pdb_id.'_jobid'.$random_id.'.txt';
+    $Result_path=$dest_dir.'/'.$pdb_id.$rand_id.'/'.$pdb_id.'_jobid'.$rand_id.'.txt';
 
 ?>
+<div id="txtHint">
+<h5>.....Please click refresh when it's more than 3 minutes.....</h5>
+<input type="submit" name="Refresh" value="Refresh" onclick="checkResult()">
+</div>
 <script type="text/javascript">
 function checkResult()
 {
@@ -168,7 +187,7 @@ function checkResult()
             document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","checkResult.php?file="<?php echo $Result_path;?>,true);
+    xmlhttp.open("GET","checkResult.php?file=<?php echo $Result_path;?>",true);
     xmlhttp.send();
 }
 </script>
