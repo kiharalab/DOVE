@@ -24,7 +24,10 @@ def Exec_Prediction(indicate,input_path):
     input_data = np.load(inputdata_path)
     result=model.predict(input_data)
     result = result[:, 0]  # it outputs like (num_tested,1) format
-    return np.mean(result)
+    tmp_index = np.argsort(result)
+    tmp_record = result[tmp_index]
+    tmp_pred = np.mean(tmp_record[1:3])
+    return tmp_pred
 
 
 

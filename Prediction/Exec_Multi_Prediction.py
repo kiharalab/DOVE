@@ -27,7 +27,11 @@ def Exec_Multi_Prediction(indicate,input_path):
     new_result=[]
     total_predlen=int(len(result)/4)
     for i in range(total_predlen):
-        new_result.append(np.mean(result[i*4:i*4+4]))
+        tmp_record =result[i*4:i*4+4]
+        tmp_index = np.argsort(tmp_record)
+        tmp_record = tmp_record[tmp_index]
+        tmp_pred = np.mean(tmp_record[1:3])
+        new_result.append(tmp_pred)
     return new_result
 
 
