@@ -30,7 +30,7 @@ def Exec_Multi_Prediction(indicate,input_path):
         tmp_record =result[i*4:i*4+4]
         tmp_index = np.argsort(tmp_record)
         tmp_record = tmp_record[tmp_index]
-        tmp_pred = np.mean(tmp_record[1:3])
+        tmp_pred = tmp_record[0]
         new_result.append(tmp_pred)
     return new_result
 

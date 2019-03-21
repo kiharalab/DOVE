@@ -26,7 +26,7 @@ def Exec_Prediction(indicate,input_path):
     result = result[:, 0]  # it outputs like (num_tested,1) format
     tmp_index = np.argsort(result)
     tmp_record = result[tmp_index]
-    tmp_pred = np.mean(tmp_record[1:3])
+    tmp_pred = tmp_record[0]#Minimum one
     return tmp_pred
 
 
