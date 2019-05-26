@@ -1,0 +1,148 @@
+
+<HTML>
+<HEAD>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122276036-12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122276036-12');
+</script>
+
+
+  <title>Dove Server</title>
+  <meta name="KEYWORDS" content="Evaluation of Docking model with Dove">
+  <meta name="DESCRIPTION" content="Dove algorithm">
+ <link rel=stylesheet type=text/css href="hs.css">
+<script language="Javascript" type="text/javascript">
+<!--
+// This script came from
+// Uncle Jim's Javascript Examples
+// JDStiles.com
+
+function selectAll(theField) {
+var tempval=eval("document."+theField)
+tempval.focus()
+tempval.select()
+}
+//-->
+</script>
+<style>
+//A{color:red; text-decoration:none}
+A:hover{color:blue}
+A:visited:{color:#000066}
+</style>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:500px}
+</style>
+<script language="javascript">
+<!--
+
+/*############################################################################
+This script is made by bratta from www.bratta.com and can be used freely
+as long as this msg is intact. Visit www.bratta.com for more great scripts.
+############################################################################*/
+
+
+	var n = (document.layers) ? 1:0;
+	var ie = (document.all) ? 1:0;
+
+/*The function for "making" the objects
+######################################################################################*/
+	function makeObj(obj){
+    	this.css=(n) ? eval('document.'+obj):eval(obj+'.style')
+		this.hideIt=b_hideIt;
+		this.showIt=b_showIt;
+		this.css.visibility="hidden"
+		return this
+	}
+
+//######################################################################################
+	function init(){
+	//making the objects to show and hide:
+	text1=new makeObj('divText1')
+	}
+//-->
+
+</script>
+</HEAD>
+<body onLoad="init()">
+
+
+<form action="upload_file.php" method="post" ENCTYPE="multipart/form-data" NAME = parameters>
+
+
+  <table>
+
+      <tr>
+	<td><img src="img/header.jpg" height=200 alt="Dove"> <br>
+</tr>
+
+<!-- 	 <br>  &nbsp; &nbsp; &nbsp;&nbsp; <strong>WebServer </strong> -->
+    </tr>
+      <tr>
+        <td valign="top">
+       [<a href="index.html">Dove</a>]
+            [<a href="http://kiharalab.org/dove/ReadMe.html">ReadMe</a>]
+       [<a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred">Source Code</a>]
+       [<a href="http://kiharalab.org">Lab</a>]
+
+       &nbsp; Contact: <a href="mailto:dkihara@purdue.edu">dkihara@purdue.edu</a>
+        </td>
+      </tr>
+</table>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-ninetenth">
+      <h1><img src="./img/header.jpg" style="width:10%;">What is Dove?</h1>
+      <h5 class="w3-padding-32" style="font-size:25px;">Dove is a Docking Model Evaluation method based on 3D Deep Convolutional Neural Networks</h5>
+
+      <p class="w3-text-grey" style="font-size:20px;">Dove is an improved evaluation method for docking model, which is based on cross-fold training and
+          validation on around 2 million examples.
+          Compared to previous method, it can work better on different benchmarks. Meanwhile, for most incorrect models,
+          at least one of Dove method will give a very low probability(<0.01).
+      </p>
+    </div>
+
+    <div class="center">
+      <img src="./img/model.jpg" style="width:100%;">
+    </div>
+  </div>
+</div>
+    <div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-ninetenth">
+      <h1><img src="./img/performance1.jpg" style="width:100%;font-size:25px">Dove protocol</h1>
+      <h5 class="w3-padding-32" style="font-size:22px;">
+	Dove protocol consists of mainly four steps:
+      </h5>
+
+      <p class="w3-text-grey" style="font-size:20px;">
+	(1) Calculate modified GOAP and ITScore to get each atom's score;
+      </p>
+      <p class="w3-text-grey" style="font-size:20px;">
+	(2) Extract the interface atom type, location and energy score to form the input for deep learning model;
+      </p>
+      <p class="w3-text-grey" style="font-size:20px;">
+	(3) Use the deep learning trained model to predict the probability
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</BODY>
+</HTML>
