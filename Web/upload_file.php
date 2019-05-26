@@ -35,6 +35,22 @@ tempval.select()
 A:hover{color:blue}
 A:visited:{color:#000066}
 </style>
+<style>
+//A{color:red; text-decoration:none}
+A:hover{color:blue}
+A:visited:{color:#000066}
+</style>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:500px}
+</style>
 <script language="javascript">
 <!--
 
@@ -70,26 +86,6 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 <body onLoad="init()">
 
 
-  <table>
-    <tbody>
-      <tr>
-	<td><img src="img/header.png" height=200 alt="Dove"> <br>
-	<strong><font size=2.5 color=gray>UNDER CONSTRUCTION Dove</font> </strong>
-		 <br> <br>
-		 <strong> </font></strong></td>
-</tr>
-
-<!-- 	 <br>  &nbsp; &nbsp; &nbsp;&nbsp; <strong>WebServer </strong> -->
-    </tr>
-      <tr>
-        <td valign="top">
-       [<a href="index.html">Dove</a>]
-       [<a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred">Source Code</a>]
-       [<a href="http://kiharalab.org">Lab</a>]
-       &nbsp; Contact: <a href="mailto:dkihara@purdue.edu">dkihara@purdue.edu</a>
-        </td>
-      </tr>
-</table>
 
 <tr>
    <td colspan="5"> <hr size="2" align="left"></td>
@@ -101,10 +97,34 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 
 <tr>
 <td colspan="5">
-<strong><font size=4 > Dove Result  </font></strong>
+
 <p>
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
+      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+    <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
+    <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
+  </div>
+ <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
+      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+    <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
+    <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
+  </div>
+</div>
+<br><br>
+<div class="w3-container">
 
+      <h1><img src="./img/header.jpg" style="width:10%;">A deep-learning based docking decoy evaluation method</h1>
 
+</div>
+<strong><font size=4 > Dove Result  </font></strong>
 <td colspan="5"></td>
 
 
@@ -112,9 +132,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
    <td colspan="5">
     <?php
   /* set upload directory */
-    $dest_dir=getcwd();
-
-    $dest_dir=$dest_dir.'/uploads';
+    $dest_dir='/bio/kihara-web/www/dove/uploads';
 
     /* test directory exists or not */
     if(!file_exists($dest_dir)){
@@ -204,10 +222,25 @@ function checkResult()
 
 <b><font size=4 >If you use this program, please cite:</b><br>
 <font size=4 >Docking Model Evaluation by 3D Deep Convo-lutional Neural Networks
-Xiao Wang, Genki Terashi, Charles W. Christoffer, Mengmeng Zhu, and Daisuke Kihara
+Xiao Wang, Genki Terashi, Charles W. Christoffer, Mengmeng Zhu, and Daisuke Kihara,In submission (2019)
 
 <br>
-
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+  <div class="w3-xlarge w3-padding-32">
+   <a href="https://twitter.com/kiharalab" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>
+ </div>
+</footer>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 
 </BODY>
 </HTML>
