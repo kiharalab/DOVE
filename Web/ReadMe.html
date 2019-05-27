@@ -82,7 +82,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 
 
 <div class="w3-top">
-  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+  <div class="w3-bar w3-blue w3-card-2 w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Tutorials</a>
@@ -92,7 +92,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
   </div>
  <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Tutorials</a>
       <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
@@ -122,7 +122,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
           (2)Compared to previous method, it can work better on different benchmarks, such as Zdock,Dockground.
       </p>
        <p class="w3-text-grey" style="font-size:20px;">
-        (3)For most incorrect models,at least one of Dove method will give a very low probability(<0.01).
+        (3)For most incorrect models,at least one of Dove method will give a very low probability(<=0.01).
        </p>
         <p class="w3-text-grey" style="font-size:20px;">
         (4)In the cross-fold testing part, we achieve around 85% accuracy on training set and around 70% accuracy on the validation set.
@@ -140,17 +140,20 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
     <div class="w3-ninetenth">
       <h1>Dove protocol</h1>
       <h5 class="w3-padding-32" style="font-size:22px;">
-	Dove protocol consists of mainly four steps:
+	Dove protocol consists of four steps:
       </h5>
 
       <p class="w3-text-grey" style="font-size:20px;">
-	(1) Calculate modified GOAP and ITScore to get each atom's score;
+	(1) Calculate modified GOAP and ITScore to get each atom's score.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(2) Extract the interface atom type, location and energy score to form the input for deep learning model;
+	(2) Extract the interface atom type, location and energy score to form the input for deep learning model.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(3) Use the deep learning trained model to predict the probability
+	(3) Use the deep learning trained model to predict the the probability of the decoy being correct
+          (an acceptable model with the CAPRI criteria).1.0 is the highest score and 0.0 is the lowest.
+          It applied 8 networks, each of which considers different features of the input decoys.
+          Thus, Dove outputs 8 probability values.
       </p>
     </div>
   </div>
@@ -162,25 +165,67 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
     <div class="w3-ninetenth">
       <h1>How to use the platform?</h1>
       <p class="w3-text-grey" style="font-size:20px;">
-	(1)Prepare a protein complex pdb file, in which receptor chain id should be A while ligand chain id should be b.
+	(1)Prepare a protein complex pdb file, in which receptor chain ID should be A while ligand chain ID should be B.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(2) Upload the file and submit, results will show up after waiting about 3 minuters.
-          Please click refresh if you don't find updates after 3 minuters.
+	(2) Upload the file and submit, results will show up after waiting about 3 minutes.
+          Please click refresh if you don't find updates after 3 minutes.
+          Usually, if job has been finished, the result will directly show up. Otherwise, it may still running.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(3) Check the results output format:
-          complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.75000,
-(Explanation: first column is the file name, 2nd-9th column denotes the probability that model outputs, 2nd-ATOM20, 3rd-ATOM40 4th-GOAP 5th-ITScore 6th-ATOM+GOAP 7th-ATOM+ITScore 8th-GOAP+ITScore 9th-ATOM40+GOAP+ITScore. If it's -1, it means you do not have model weights files for corresponding deep learning model.)
+	(3) Receive and read the output. It has the following formats (values and the file name are examples):
+<br>
+
+          complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.75000
+
+          <br>
+(Explanation: first column is the file name, 2nd-9th column denotes the probability that Dove outputs by 8 deep learning networks based on different input features.
+If it's -1, it means you do not have model weights files for corresponding deep learning model.)
+
       </p>
         <p class="w3-text-grey" style="font-size:20px;">
             Here is an example output picure:
             <img src="./img/result.png" style="width:100%;">
         </p>
         <p class="w3-text-grey" style="font-size:20px;">
-	(4) As you can see, two of our methods give very low(<=0.01) probability.
-            Usually for incorrect docking models, at least one of our method will yield a very low probability.
+        Here is a detailed table to explain the meaning of different input features.
         </p>
+        <table>
+            <tr>
+                <td>ATOM20</td> <td>Input based on atom types and locations in a 20 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                <td>ATOM40</td> <td>Input based on atom types and locations in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                <td>GOAP</td> <td>Input based on atoms' GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                <td>ITScore</td> <td>Input based on atoms' ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                <td>ATOM+GOAP</td> <td>Input based on atom types, locations and atoms' GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+            <td>ATOM+ITScore</td> <td>Input based on atom types, locations and atoms' ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                 <td>GOAP+ITScore</td> <td>Input based on atoms' ITScore and  GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            </tr>
+            <tr>
+                 <td>ATOM+GOAP+ITScore</td> <td>Input based on atom types, locations and atoms' GOAP and ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+
+            </tr>
+        </table>
+
+        <p class="w3-text-grey" style="font-size:20px;">
+
+	(4) As you can see, two of our methods give very low(<=0.01) probability for this incorrect decoy.
+            Usually for incorrect decoys, at least one of our methods will yield a very low probability.
+        </p>
+
+        <p class="w3-text-grey" style="font-size:20px;">Here is an example of <a href="./Example/Correct1.pdb" >input</a> and <a href="./Example/Correct1_jobid9250013.txt" >output</a></p>
+
     </div>
   </div>
 </div>

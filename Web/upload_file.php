@@ -166,7 +166,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
         $state=move_uploaded_file($upfile['tmp_name'],$dest);
      }
      /* Move file finished then we need to use python to get the results*/
-     echo("Congratulations, job has been submitted, please wait around 2-5 minutes!<br>");
+     echo("Your job has been submitted, please wait around 2-5 minutes!<br>");
      echo "Your submitted file:",$upfile['name'],"<br>";
      $rand_id=rand(1000000, 9999999);
      $current_path=getcwd();

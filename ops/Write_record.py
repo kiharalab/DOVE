@@ -7,7 +7,7 @@ def Write_record(record,dir_path,pdb_id,random_id):
                 if count==0:
                     file.write(item+',')#write file name
                     continue
-                file.write('%.5f,'%item)
+                file.write('%.4f,'%item)
             file.write('\n')
 
 
