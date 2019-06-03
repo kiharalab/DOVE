@@ -100,8 +100,8 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 
 <p>
 <div class="w3-top">
-  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-blue w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
       <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
@@ -110,7 +110,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
   </div>
  <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
       <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
@@ -121,7 +121,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 <br><br>
 <div class="w3-container">
 
-      <h1><img src="./img/header.jpg" style="width:10%;">A deep-learning based docking decoy evaluation method</h1>
+      <h1><img src="./img/header.jpg" style="width:8%;">A Deep-learning based dOcking decoy eValuation mEthod</h1>
 
 </div>
 <strong><font size=4 > Dove Result  </font></strong>
@@ -166,7 +166,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
         $state=move_uploaded_file($upfile['tmp_name'],$dest);
      }
      /* Move file finished then we need to use python to get the results*/
-     echo("Your job has been submitted, please wait around 2-5 minutes!<br>");
+     echo("We received the job you submitted. Please wait 2-5 minutes.<br>");
      echo "Your submitted file:",$upfile['name'],"<br>";
      $rand_id=rand(1000000, 9999999);
      $current_path=getcwd();

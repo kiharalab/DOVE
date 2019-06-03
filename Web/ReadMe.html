@@ -86,7 +86,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Tutorials</a>
-      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+      <a href="https://github.com/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
     <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
     <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
   </div>
@@ -95,7 +95,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Tutorials</a>
-      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+      <a href="https://github.com/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
     <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
     <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
   </div>
@@ -103,7 +103,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 <br><br>
 <div class="w3-container">
 
-      <h1><img src="./img/header.jpg" style="width:10%;">A deep-learning based docking decoy evaluation method</h1>
+      <h1><img src="./img/header.jpg" style="width:8%;">A Deep-learning based dOcking decoy eValuation mEthod</h1>
 
 </div>
 
@@ -111,21 +111,18 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-ninetenth">
-      <h1><img src="./img/header.jpg" style="width:10%;">What is Dove?</h1>
-      <h5 class="w3-padding-32" style="font-size:22px;">Dove is a Docking Model Evaluation method based on 3D Deep Convolutional Neural Networks</h5>
+      <h1><img src="./img/header.jpg" style="width:5%;">What is Dove?</h1>
+      <h5 class="w3-padding-32" style="font-size:22px;">Dove is a docking model evaluation method based on 3D deep convolutional neural networks.</h5>
 
       <p class="w3-text-grey" style="font-size:20px;">
-         (1) Dove is an improved evaluation method for docking model, which is based on cross-fold training and
-          validation on around 2 million examples.
+         (1) Dove is a protein docking model evaluation method, which distinguish good quality (acceptable quality in the CAPRI-criteria) from incorrect models. It is trained on around 2 million examples.
       </p>
         <p class="w3-text-grey" style="font-size:20px;">
-          (2)Compared to previous method, it can work better on different benchmarks, such as Zdock,Dockground.
+          (2) Compared to previous methods, it worked better on two different benchmark datasets, Zdock and Dockground.
       </p>
-       <p class="w3-text-grey" style="font-size:20px;">
-        (3)For most incorrect models,at least one of Dove method will give a very low probability(<=0.01).
-       </p>
+
         <p class="w3-text-grey" style="font-size:20px;">
-        (4)In the cross-fold testing part, we achieve around 85% accuracy on training set and around 70% accuracy on the validation set.
+        (3)In the cross-fold testing part, we achieve around 85% accuracy on training set and around 70% accuracy on the validation set.
        </p>
     </div>
 
@@ -138,22 +135,23 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
   <div class="w3-content">
 
     <div class="w3-ninetenth">
-      <h1>Dove protocol</h1>
+      <h1><img src="./img/header.jpg" style="width:5%;">Dove protocol</h1>
       <h5 class="w3-padding-32" style="font-size:22px;">
 	Dove protocol consists of four steps:
       </h5>
 
       <p class="w3-text-grey" style="font-size:20px;">
-	(1) Calculate modified GOAP and ITScore to get each atom's score.
+	(1) Dove computes and assigns GOAP and ITScore to each atom in a query docking model. GOAP and ITScore is knowledge-based potentials used in protein structure prediction.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(2) Extract the interface atom type, location and energy score to form the input for deep learning model.
+	(2) As another type of input feature, Dove extracts the interface atom types and positions at the docking interface.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(3) Use the deep learning trained model to predict the the probability of the decoy being correct
-          (an acceptable model with the CAPRI criteria).1.0 is the highest score and 0.0 is the lowest.
-          It applied 8 networks, each of which considers different features of the input decoys.
-          Thus, Dove outputs 8 probability values.
+	(3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.
+      </p>
+        <p class="w3-text-grey" style="font-size:20px;">
+	(4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria).
+            1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.
       </p>
     </div>
   </div>
@@ -163,14 +161,13 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
   <div class="w3-content">
 
     <div class="w3-ninetenth">
-      <h1>How to use the platform?</h1>
+      <h1><img src="./img/header.jpg" style="width:5%;">How to use the platform?</h1>
       <p class="w3-text-grey" style="font-size:20px;">
-	(1)Prepare a protein complex pdb file, in which receptor chain ID should be A while ligand chain ID should be B.
+	(1)Prepare a PDB file of a protein complex to evaluate. The receptor chain ID should be A while ligand chain ID should be B.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
-	(2) Upload the file and submit, results will show up after waiting about 3 minutes.
-          Please click refresh if you don't find updates after 3 minutes.
-          Usually, if job has been finished, the result will directly show up. Otherwise, it may still running.
+	(2) Upload the file and submit. The result will show up after about 3 minutes.
+          Please click refresh if you don't find the update after 3 minutes. Occasionally, a job can take longer.
       </p>
       <p class="w3-text-grey" style="font-size:20px;">
 	(3) Receive and read the output. It has the following formats (values and the file name are examples):
@@ -179,48 +176,49 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
           complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.75000
 
           <br>
-(Explanation: first column is the file name, 2nd-9th column denotes the probability that Dove outputs by 8 deep learning networks based on different input features.
-If it's -1, it means you do not have model weights files for corresponding deep learning model.)
+(Explanation: 1st column is the file name, 2nd-9th column denotes the probability of the decoy is correct (acceptable quality according to CAPRI). If the value is -1, it means the model is not evaluated using the corresponding features.)
 
       </p>
         <p class="w3-text-grey" style="font-size:20px;">
-            Here is an example output picure:
-            <img src="./img/result.png" style="width:100%;">
+            Here is an example output of correct decoy:
+            <img src="./img/Correct.png" style="width:100%;">
+            Here is an example output of incorrect decoy:
+            <img src="./img/Incorrect.png" style="width:100%;">
         </p>
         <p class="w3-text-grey" style="font-size:20px;">
         Here is a detailed table to explain the meaning of different input features.
         </p>
         <table>
             <tr>
-                <td>ATOM20</td> <td>Input based on atom types and locations in a 20 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                <td>ATOM20</td> <td>Input based on atom types and locations in a 20<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                <td>ATOM40</td> <td>Input based on atom types and locations in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                <td>ATOM40</td> <td>Input based on atom types and locations in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                <td>GOAP</td> <td>Input based on atoms' GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                <td>GOAP</td> <td>Input based on atoms' GOAP energy scores in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                <td>ITScore</td> <td>Input based on atoms' ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                <td>ITScore</td> <td>Input based on atoms' ITScore energy scores in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                <td>ATOM+GOAP</td> <td>Input based on atom types, locations and atoms' GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                <td>ATOM+GOAP</td> <td>Input based on atom types, locations and atoms' GOAP energy scores in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-            <td>ATOM+ITScore</td> <td>Input based on atom types, locations and atoms' ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+            <td>ATOM+ITScore</td> <td>Input based on atom types, locations and atoms' ITScore energy scores in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                 <td>GOAP+ITScore</td> <td>Input based on atoms' ITScore and  GOAP energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                 <td>GOAP+ITScore</td> <td>Input based on atoms' ITScore and  GOAP energy scores in a 40<sup>3</sup> A cube in the interface area (within 10 A), in which the cube center is the interface area center</td>
             </tr>
             <tr>
-                 <td>ATOM+GOAP+ITScore</td> <td>Input based on atom types, locations and atoms' GOAP and ITScore energy scores in a 40 A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
+                 <td>ATOM+GOAP+ITScore</td> <td>Input based on atom types, locations and atoms' GOAP and ITScore energy scores in a 40<sup>3</sup> A cube in the interface area(within 10A), in which the cube center is the interface area center</td>
 
             </tr>
         </table>
 
         <p class="w3-text-grey" style="font-size:20px;">
 
-	(4) As you can see, two of our methods give very low(<=0.01) probability for this incorrect decoy.
+	(4) In the examples above, two of our methods give very low(<=0.01) probability for this incorrect decoy.
             Usually for incorrect decoys, at least one of our methods will yield a very low probability.
         </p>
 
