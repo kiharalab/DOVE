@@ -1,6 +1,6 @@
 # Dove_Pred
-Dove Prediction Version
-Dependency: tensorflow, keras, numpy
+## Reference:
+Docking Model Evaluation by 3D Deep Convo-lutional Neural Networks Xiao Wang, Genki Terashi, Charles W. Christoffer, Mengmeng Zhu, and Daisuke Kihara, In submission (2019) 
 ## Online platform: http://kiharalab.org/dove/
 ## What is Dove?
 **Dove is a docking model evaluation method based on 3D deep convolutional neural networks.**  
@@ -17,6 +17,7 @@ The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filt
 (3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.   
 (4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.   
 ## Usage
+Code dependency: tensorflow, keras, numpy 
 ```
  python main.py:   
   -h, --help            show this help message and exit   
