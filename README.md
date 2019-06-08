@@ -36,21 +36,21 @@ if you need more than 1 gpu, use --gpu=0,1
 ```
 python main.py --mode=1 -F [directory_path] --id=888 --gpu=0  
 ```
-### Notice: Receptor chain ID must be 'A', ligand chain ID must be 'B' (PDB format)
-### Output record:
+### Notice: Receptor chain ID must be 'A', ligand chain ID must be 'B' (PDB format)    
+### Output record:    
 Output will be saved in the subdirectory of your models' directory.       
 For mode 0,the output record will be kept as file_name[:-4]_jobid[id].txt.    
 For mode 1,the output record will be kept as RECORD_jobid[id].txt
-### Output format(Example):
+### Output format(Example):   
 complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.75000,     
 (Explanation: 1st column is the file name, 2nd-9th column denotes the probability of the decoy is correct (acceptable quality according to CAPRI). If the value is -1, it means the model is not evaluated using the corresponding features.)
-### Example:
-***Here is an example output of a correct decoy:***
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Correct.png)   
-As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).
-***Here is an example output of an incorrect decoy:***
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Incorrect.png) 
-Typically an incorrect decoy has at least one very small probability (< 0.01).
-***Explanation of different input features***
-
+### Example:    
+***Here is an example output of a correct decoy:***   
+![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Correct.png)      
+As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).     
+***Here is an example output of an incorrect decoy:***      
+![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Incorrect.png)  
+Typically an incorrect decoy has at least one very small probability (< 0.01).   
+***Explanation of different input features***   
+![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/input_instruction.png) 
 
