@@ -128,6 +128,10 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 
     <div class="center">
       <img src="./img/model_bold.jpg" style="width:100%;">
+        <p class="w3-text-grey" style="font-size:15px;">
+            The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filters in each layer. 20, 18, 16, 8, 6, 3 are the output cube size of each layer. Here our input size are 20*20*20. 10800, 1000, 100 denotes the number of neurons for fully connected layer. Block means that the data is a 3D cube, Flat is a 1D vector, Pool is a max-pooling, and FC is fully-connected network.
+        </p>
+
     </div>
   </div>
 </div>
@@ -183,6 +187,8 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
             Here is an example output of a correct decoy:
             <img src="./img/Correct.png" style="width:100%;">
             As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).
+        </p>
+            <p class="w3-text-grey" style="font-size:20px;">
             Here is an example output of an incorrect decoy:
             <img src="./img/Incorrect.png" style="width:100%;">
             Typically an incorrect decoy has at least one very small probability (< 0.01).
