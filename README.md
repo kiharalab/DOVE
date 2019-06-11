@@ -52,12 +52,11 @@ complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.7
 (Explanation: 1st column is the file name, 2nd-9th column denotes the probability of the decoy is correct (acceptable quality according to CAPRI). If the value is -1, it means the model is not evaluated using the corresponding features.)
     
 ## Example: 
-***Example pdb:Web/Example/Correct.pdb***
-***Here is an example output of a correct decoy:***   
+***Here is an example output of a correct decoy![link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Correct.pdb):***   
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Correct.png)      
 As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).     
       
-***Here is an example output of an incorrect decoy:***      
+***Here is an example output of an incorrect decoy[link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Incorrect.pdb):***      
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Incorrect.png)  
 Typically an incorrect decoy has at least one very small probability (< 0.01). 
      
