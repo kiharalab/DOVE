@@ -16,6 +16,7 @@ The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filt
 (2) As another type of input feature, Dove extracts the interface atom types and positions at the docking interface.   
 (3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.   
 (4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.   
+![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Flowchart.jpg)   
 ## Code Pre-required Library
 ```
 Tensoflow: pip/conda install tensorflow==0.12
