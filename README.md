@@ -17,6 +17,8 @@ The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filt
 (3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.   
 (4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.   
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Flowchart.jpg)   
+Notes: *ITScore is not made available in this released code because of the license issue.*
+
 ## Code Pre-required Library
 ```
 Tensoflow: pip/conda install tensorflow==0.12
@@ -50,16 +52,19 @@ For mode 0,the output record will be kept as file_name[:-4]_jobid[id].txt.
 For mode 1,the output record will be kept as RECORD_jobid[id].txt
 ### Output format(Example):   
 complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.75000,     
-(Explanation: 1st column is the file name, 2nd-9th column denotes the probability of the decoy is correct (acceptable quality according to CAPRI). If the value is -1, it means the model is not evaluated using the corresponding features.)
-    
+(Explanation: 1st column is the file name, 2nd-9th column denotes the probability of the decoy is correct (acceptable quality according to CAPRI). If the value is -1, it means the model is not evaluated using the corresponding features.)    
+Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
+
 ## Example: 
 ***Here is an example output of a correct decoy([link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Correct.pdb)):***   
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Correct.png)      
-As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).     
+As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).    
+Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
       
 ***Here is an example output of an incorrect decoy([link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Incorrect.pdb)):***      
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Incorrect.png)  
-Typically an incorrect decoy has at least one very small probability (< 0.01). 
+Typically an incorrect decoy has at least one very small probability (< 0.01).    
+Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
      
 ***Explanation of different input features***   
 ![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/input_instruction.png) 
