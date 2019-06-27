@@ -1,5 +1,7 @@
 import os
 from ops.os_operation import mkdir
+##can't use ITSCore for license issue, please email to me for details:wang3702@purdue.edu
+#we modified the ITScore, but we can't release because of ITScore license issue
 def Gen_ITScore(file_path):
 
     listtmp = os.listdir(file_path)

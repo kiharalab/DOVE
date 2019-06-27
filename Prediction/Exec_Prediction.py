@@ -11,6 +11,11 @@ def Exec_Prediction(indicate,input_path):
     if not os.path.exists(model_path):
         print('No model now')
         return -1
+    ##can't use anything related to ITSCore for license issue, please email to me for details:wang3702@purdue.edu
+    if indicate=='itscore' or indicate=='atomitscore' or indicate=='goapitscore' or indicate=='atomgoapitscore':
+        print('Because of ITScore license issue, we can not work on anything related to ITScore')
+        print('*'*5+'Please contact me for details: wang3702@purdue.edu'+'*'*5)
+        return -1
     # First reload the model
     channel = Indicate_to_channel(indicate)
     model = makecnn(0, 0, 0, channel)
