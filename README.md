@@ -1,4 +1,4 @@
-# Dove_Pred
+# DOVE
 ## Reference:
 Docking Model Evaluation by 3D Deep Convo-lutional Neural Networks Xiao Wang, Genki Terashi, Charles W. Christoffer, Mengmeng Zhu, and Daisuke Kihara, In submission (2019) 
 ## Online platform: http://kiharalab.org/dove/
