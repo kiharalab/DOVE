@@ -104,7 +104,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
-      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+      <a href="https://github.com/kiharalab/DOVE" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
     <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
     <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
   </div>
@@ -113,7 +113,7 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="./ReadMe.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
-      <a href="https://github.rcac.purdue.edu/kiharalab/Dove_Pred" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
+      <a href="https://github.com/kiharalab/DOVE" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Code</a>
     <a href="http://kiharalab.org/contact.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us</a>
     <a href="http://kiharalab.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lab</a>
   </div>
