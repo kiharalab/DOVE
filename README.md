@@ -8,7 +8,7 @@ Docking Model Evaluation by 3D Deep Convo-lutional Neural Networks Xiao Wang, Ge
 (2) Compared to previous methods, it worked better on two different benchmark datasets, Zdock and Dockground.     
 (3) In the cross-fold testing we conducted, we achieve around 85% accuracy on training set and around 70% accuracy on the validation set.  
 **Network Architecture**
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/model_bold.jpg)   
+![](https://github.com/kiharalab/DOVE/blob/master/Web/img/model_bold.jpg)   
 The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filters in each layer. 20, 18, 16, 8, 6, 3 are the output cube size of each layer. Here our input size are 20*20*20. 10800, 1000, 100 denotes the number of neurons for fully connected layer. Block means that the data is a 3D cube, Flat is a 1D vector, Pool is a max-pooling, and FC is fully-connected network.
 ## Dove protocol
 **Dove protocol consists of four steps:**   
@@ -16,7 +16,7 @@ The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filt
 (2) As another type of input feature, Dove extracts the interface atom types and positions at the docking interface.   
 (3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.   
 (4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.   
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Flowchart.jpg)   
+![](https://github.com/kiharalab/DOVE/blob/master/Web/img/Flowchart.jpg)   
 Notes: *ITScore is not made available in this released code because of the license issue.*
 
 ## Code Pre-required Library
@@ -56,16 +56,16 @@ complex.244440.pdb,0.80237,0.79943,0.90355,0.78516,-1.00000,-1.00000,0.91417,0.7
 Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
 
 ## Example: 
-***Here is an example output of a correct decoy([link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Correct.pdb)):***   
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Correct.png)      
+***Here is an example output of a correct decoy([link](https://github.com/kiharalab/DOVE/blob/master/Web/Example/Correct.pdb)):***   
+![](https://github.com/kiharalab/DOVE/blob/master/Web/img/Correct.png)      
 As you see in this example typically a correct decoy has a high probability (>0.5) from more than four feature combinations and no very small probability (< 0.01).    
 Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
       
-***Here is an example output of an incorrect decoy([link](https://github.com/kiharalab/Dove_Pred/blob/master/Web/Example/Incorrect.pdb)):***      
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/Incorrect.png)  
+***Here is an example output of an incorrect decoy([link](https://github.com/kiharalab/DOVE/blob/master/Web/Example/Incorrect.pdb)):***      
+![](https://github.com/kiharalab/DOVE/blob/master/Web/img/Incorrect.png)  
 Typically an incorrect decoy has at least one very small probability (< 0.01).    
 Note: *ITScore is not made available in this released code because of the license issue. Output that use ITScore in the feature combination is shown as -1.*
      
 ***Explanation of different input features***   
-![](https://github.com/kiharalab/Dove_Pred/blob/master/Web/img/input_instruction.png) 
+![](https://github.com/kiharalab/DOVE/blob/master/Web/img/input_instruction.png) 
 
