@@ -156,6 +156,10 @@ as long as this msg is intact. Visit www.bratta.com for more great scripts.
 	(4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria).
             1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.
       </p>
+        <p class="w3-text-grey" style="font-size:20px;">
+            In the paper, the models were trained on a 4-fold cross validation. In this server, among the four models from the cross-validation, we implemented the model which gave the highest hit rate on the testing datasets.
+	      </p>
+
         <div class="center">
       <img src="./img/Flowchart.jpg" style="width:100%;">
 
