@@ -15,7 +15,8 @@ The network architecture of Dove. 100, 200, 200, 400, 400 are the number of filt
 (1) Dove computes and assigns GOAP and ITScore to each atom in a query docking model. GOAP and ITScore is knowledge-based potentials used in protein structure prediction.   
 (2) As another type of input feature, Dove extracts the interface atom types and positions at the docking interface.   
 (3) The query model is mapped on to a 3D grid, and GOAP, ITScore, and atom type information are mapped to each voxel. These are input features for the evaluation.   
-(4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.   
+(4) The deep learning trained model was applied to predict the the probability of the input model (decoy) being correct (an acceptable model with the CAPRI criteria). 1.0 is the highest score and 0.0 is the lowest. It applied 8 networks, each of which considers different features of the input decoys. Thus, Dove outputs 8 probability values.     
+In the paper, the models were trained on a 4-fold cross validation. In this server, among the four models from the cross-validation, we implemented the model which gave the highest hit rate on the testing datasets.
 ![](https://github.com/kiharalab/DOVE/blob/master/Web/img/Flowchart.jpg)   
 Notes: *ITScore is not made available in this released code because of the license issue.*
 
