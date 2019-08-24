@@ -83,6 +83,13 @@ def form_list(item):
     return rlist,llist
 
 def form_atom_list(item,rcount):
+    """
+    :param item: decoy path
+    :param rcount: number of atoms in the receptor
+    :return:
+    receptor list, ligand list: which includes the info for receptor and ligand
+    here is [x_coordinate,y_coordinate,z_coordinate,atom_type]
+    """
     rlist=[]
     llist=[]
     #fout = open(item+'.iface', "w")
@@ -152,6 +159,13 @@ def form_atom_list(item,rcount):
     return rlist,llist
 
 def Form_interface(rlist,llist,type):
+    """
+    :param rlist: receptor info
+    :param llist: ligand info
+    :param type: no use
+    :return:
+    information in the interface area
+    """
     #type=1:20A type=others:40A
     cut_off=10
     cut_off=cut_off**2
@@ -220,6 +234,14 @@ def omitunnecessary(rlist,llist,xmean,ymean,zmean,cut_off):
     return newrlist,newllist
 
 def reform_input(rlist,llist,type):
+    """
+    :param rlist: info in receptor
+    :param llist: info in ligand
+    :param type: specify the voxel size
+    :return:
+    a voxel which includes the information in the interface area
+    here 4 channels for different atoms based on their locations
+    """
     assert  type==1 or type==2
     if type==1:
         cut_off=20

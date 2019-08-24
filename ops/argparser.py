@@ -13,6 +13,10 @@ def argparser():
     parser.add_argument('--id', type=int,default=888,
                         help='random id for the webserver notification, make sure corresponding')
     parser.add_argument('--gpu',type=str,default='0',help='Choose gpu id, example: \'1,2\'(specify use gpu 1 and 2)')
+    parser.add_argument('--lr', type=float, default=0.1, help='Learning Rate')
+    parser.add_argument('--reg', type=float, default='1e-5', help='Regularization term for training')
+    parser.add_argument('--batch_size', type=int, default=128, help='Batch size for training')
+    parser.add_argument('-F1', type=str,  default=None,help='validation decoy path for training choice')
     #Dense points part parameters
     args = parser.parse_args()
     # try:

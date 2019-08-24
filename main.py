@@ -75,3 +75,46 @@ if __name__ == "__main__":
         file_path = os.path.abspath(file_path)
         final_record,input_path=run_pred_list(file_path,gpu_id)
         Write_record(final_record, input_path, 'RECORD', random_id)
+    elif params['mode']==2:
+        #specially for anyone want to extend the code for training their own code
+        # 1. Prepare your own data
+        #here let's use the DOVE as an Example
+        #We need to have a list of pdb files in the same directory
+        file_path=params['F']
+        file_path = os.path.abspath(file_path)
+        #then we generate training input and output for future training
+        from Training.Prepare_Data import Prepare_Data
+        train_path=Prepare_Data(file_path)
+
+        file_path = params['F1']
+        if file_path!=None:
+            file_path = os.path.abspath(file_path)
+            # then we generate training input and output for future validation
+            from Training.Prepare_Data import Prepare_Data
+
+            test_path = Prepare_Data(file_path)#for validation use
+        else:
+            test_path=os.getcwd()
+        #2 specify gpu id, learning rate and
+        choose = params['gpu']
+        lr = params['lr']
+        reg = params['reg']
+        batch_size=params['batch_size']
+        os.environ["CUDA_VISIBLE_DEVICES"] = choose
+        import tensorflow as tf
+        import keras.backend as K
+
+        # gpu_fraction = 0.1
+        # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=gpu_fraction)
+        config = tf.ConfigProto(allow_soft_placement=True)
+        config.gpu_options.allow_growth = True  # allocate as you need
+        session = tf.Session(config=config)
+        K.set_session(session)
+        #3 start training
+        #also saved the model in a sub dir in the train path
+
+        from Training.Training import Training
+        model=Training(train_path,test_path,lr,reg,batch_size)
+
+
+
