@@ -46,6 +46,11 @@ if you need more than 1 gpu, use --gpu=0,1
 ```
 python main.py --mode=1 -F [directory_path] --id=888 --gpu=0  
 ```
+## 3 How to train a model  
+```
+python main.py --mode=2 -F [data_path] -F1 [validation_data_path] --gpu=0  --lr=0.1 --reg=1e-4 --batch_size=128
+```
+To help user add more features to train their own model for their purposes. I specifically added detailed comments in the main.py and other training codes in "Training" directory. If you have any questions regarding your training, please feel free to make contact with us.
 ### Notice: Receptor chain ID must be 'A', ligand chain ID must be 'B' (PDB format)    
 ### Output record:    
 Output will be saved in the subdirectory of your models' directory.       
