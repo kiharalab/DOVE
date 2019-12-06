@@ -1,6 +1,12 @@
 # DOVE
-## Reference:
-Docking Model Evaluation by 3D Deep Convo-lutional Neural Networks Xiao Wang, Genki Terashi, Charles W. Christoffer, Mengmeng Zhu, and Daisuke Kihara, In submission (2019) 
+## Citation:
+```
+@article{wang2019protein,
+  title={Protein Docking Model Evaluation by 3D Deep Convolutional Neural Networks},
+  author={Wang, Xiao and Terashi, Genki and Christoffer, Charles W and Zhu, Mengmeng and Kihara, Daisuke},
+  journal={Bioinformatics}
+}
+```
 ## Online platform: http://kiharalab.org/dove/
 ## What is Dove?
 **Dove is a docking model evaluation method based on 3D deep convolutional neural networks.**  
