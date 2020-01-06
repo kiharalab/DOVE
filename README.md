@@ -81,3 +81,14 @@ Note: *ITScore is not made available in this released code because of the licens
 ***Explanation of different input features***   
 ![](https://github.com/kiharalab/DOVE/blob/master/Web/img/input_instruction.png) 
 
+## Download Code
+To use this code on your own machine, please first install [git lfs](https://www.atlassian.com/git/tutorials/git-lfs) on your computer.
+Then clone the repo by
+```
+git lfs clone [repo_path]
+```
+
+Sometimes you may encounter problems when downloading large files, which is caused by 1GB bandwidth limit by Github.
+Here we offer two solustions to deal with the problem:
+### 1. Download large files from our [server](http://kiharalab.org/dove/Large_LFSS.tar.gz)
+### 2. Clone the repo from [Purdue github](https://github.rcac.purdue.edu/kiharalab/DOVE)
