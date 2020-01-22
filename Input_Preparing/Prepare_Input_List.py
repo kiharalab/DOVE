@@ -8,6 +8,7 @@ from data_processing.prepare_itscore_input import form_itscore_list
 from data_processing.Get_Rcount import Get_Rcount
 import numpy as np
 from ops.Write_List import Write_List
+from ops.Correct_WrongFormat import Correct_WrongFormat
 def Prepare_Input_List(file_path,random_id):
 
     input_path=os.path.join(file_path,'Dove'+str(random_id))
@@ -36,6 +37,7 @@ def Prepare_Input_List(file_path,random_id):
         #first prepare goap and itscore for it.
         work_decoy1 = os.path.join(input_path, 'complex.' + str(random_id) + '.pdb')
         os.system('cp '+tmp_file_path+' '+work_decoy1)
+        Correct_WrongFormat(work_decoy1)
         final_id.append(item)
         id_list.append(random_id)
     #Write final id record

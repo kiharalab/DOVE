@@ -7,6 +7,7 @@ from data_processing.prepare_goap_input import form_goap_list,reform_goap_input
 from data_processing.prepare_itscore_input import form_itscore_list
 from data_processing.Get_Rcount import Get_Rcount
 import numpy as np
+from ops.Correct_WrongFormat import Correct_WrongFormat
 def Prepare_Input_Singe(file_path,random_id):
     split_lists=os.path.split(file_path)
     tmp_id=split_lists[1]
@@ -16,10 +17,12 @@ def Prepare_Input_Singe(file_path,random_id):
     save_path = input_path
     #first prepare goap and itscore for it.
     work_decoy1 = os.path.join(input_path, 'complex.' + str(random_id) + '.pdb')
+
     work_decoy2 = os.path.join(input_path, str(random_id) + '_goap.pdb')
     #work_decoy3 = os.path.join(input_path, str(random_id) + '_itscore.pdb')
     #can't use ITSCore for license issue, please email to me for details:wang3702@purdue.edu
     os.system('cp '+file_path+' '+work_decoy1)
+    Correct_WrongFormat(work_decoy1)
     #Gen goap and itscore
     pathroot=os.getcwd()
     Gen_GOAP(input_path)
