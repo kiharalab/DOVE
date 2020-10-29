@@ -91,4 +91,4 @@ git lfs clone [repo_path]
 Sometimes you may encounter problems when downloading large files, which is caused by 1GB bandwidth limit by Github.
 Here we offer two solustions to deal with the problem:
 ### 1. Download large files from our [server](http://kiharalab.org/dove/Large_LFSS.tar.gz)
-### 2. Clone the repo from [Purdue github](https://github.rcac.purdue.edu/kiharalab/DOVE)
+### 2. Clone the repo from [Purdue github](https://github.itap.purdue.edu/kiharalab/DOVE)
