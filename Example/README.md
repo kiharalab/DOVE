@@ -8,10 +8,11 @@ Notes: Here we have -1 output for all ITScore related features because of we are
 
 # Training Examples
 To help you train your own model based on your own feature, we include training examples in "Training_Example" directory.  
-(1) If you only use pdb files to build model like we did for ATOM40 features, the example input pdb files are included in "decoys" subdirectory of "Training_Example" directory.      
-(2) If you have your own validation dataset, please specify the directory path with "-F1" command parameters. Otherwise, we will default randomly split 20% percent data as validation data.   
-(3) If you want to add more features, we have included goap input example files in "Goap_Example_File" subdirectory of "Training_Example" directory and itscore input example files in "ITScore_Example_File" subdirectory of "Training_Example" directory.    
-(4) To help you add more features and training, I added very detailed comments in [Training](https://github.com/kiharalab/DOVE/tree/master/Training) directory of this repo.   
+(1) The training input should be pdb files and the label should be txt files, which is kept in "Training_Example" directory. They will automatically match with each other by indexes in their name.
+(2) If you only use pdb files to build model like we did for ATOM40 features, the example input pdb files are included in "decoys" subdirectory of "Training_Example" directory.      
+(3) If you have your own validation dataset, please specify the directory path with "-F1" command parameters. Otherwise, we will default randomly split 20% percent data as validation data.   
+(4) If you want to add more features, we have included goap input example files in "Goap_Example_File" subdirectory of "Training_Example" directory and itscore input example files in "ITScore_Example_File" subdirectory of "Training_Example" directory.    
+(5) To help you add more features and training, I added very detailed comments in [Training](https://github.com/kiharalab/DOVE/tree/master/Training) directory of this repo.   
 
 Any questions, feel free to make contact with us: dkihara@purdue.edu
 
