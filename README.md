@@ -1,4 +1,5 @@
 # DOVE
+[Protein Docking Model Evaluation by 3D Deep Convolutional Neural Networks](https://doi.org/10.1093/bioinformatics/btz870)
 ## Citation:
 ```
 @article{wang2019protein,
