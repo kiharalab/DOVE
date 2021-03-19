@@ -5,7 +5,7 @@ from Input_Preparing.Gen_ITScore import Gen_ITScore
 from data_processing.prepare_input import form_list,reform_input,Form_interface,form_atom_list
 from data_processing.prepare_goap_input import form_goap_list,reform_goap_input
 from data_processing.prepare_itscore_input import form_itscore_list
-from data_processing.Get_Rcount import Get_Rcount
+from data_processing.Get_Rcount import Get_Rcount,Get_Rcount2
 import numpy as np
 from ops.Write_List import Write_List
 from ops.Correct_WrongFormat import Correct_WrongFormat
@@ -59,8 +59,9 @@ def Prepare_Input_List(file_path,random_id):
         work_decoy1 = os.path.join(input_path, 'complex.' + str(random_id) + '.pdb')
         work_decoy2 = os.path.join(input_path, str(random_id) + '_goap.pdb')
         #work_decoy3 = os.path.join(input_path, str(random_id) + '_itscore.pdb')
-        if start_index==0:
-            rcount = Get_Rcount(work_decoy1)
+        #if start_index==0:
+        rcount = Get_Rcount(work_decoy1)
+        print("original receptor count %d"%rcount)
         rlist, llist = form_atom_list(work_decoy1, rcount)
         rlist, llist = Form_interface(rlist, llist, 0)  # This type doesn't matter
         tempload, rlength, llength = reform_input(rlist, llist, 1)
@@ -72,6 +73,9 @@ def Prepare_Input_List(file_path,random_id):
         for k in range(4):
             atom40_input.append(atom40_tmp[:, :, :, :, k])
         # Then get goap
+        print("goap decoy name ",work_decoy2)
+        rcount = Get_Rcount2(work_decoy2)
+        print("current receptor rcount %d"%rcount)
         rlist, llist = form_goap_list(work_decoy2, rcount)
         rlist, llist = Form_interface(rlist, llist, 0)
         tempload, rlength, llength = reform_goap_input(rlist, llist, 5)
