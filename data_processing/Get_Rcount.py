@@ -15,3 +15,20 @@ def Get_Rcount(file_path):
                 rcount += 1
             line = file.readline()
     return rcount
+
+def Get_Rcount2(file_path):
+    """
+
+    :param file_path: decoy path
+    :return:
+    the number of atoms in the receptor
+    """
+    #'A' chain and 'B' chain for receptor and ligand
+    rcount=0
+    with open(file_path, 'r') as file:
+        line = file.readline()
+        while line:
+            if line[1:5] == 'ATOM' and line[22]=='A':
+                rcount += 1
+            line = file.readline()
+    return rcount
