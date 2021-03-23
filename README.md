@@ -83,13 +83,14 @@ Note: *ITScore is not made available in this released code because of the licens
 ![](https://github.com/kiharalab/DOVE/blob/master/Web/img/input_instruction.png) 
 
 ## Download Code
-To use this code on your own machine, please first install [git lfs](https://www.atlassian.com/git/tutorials/git-lfs) on your computer.
-Then clone the repo by
-```
-git lfs clone [repo_path]
-```
-
-Sometimes you may encounter problems when downloading large files, which is caused by 1GB bandwidth limit by Github.
+Limited by our 1GB quota size in github, our dependency files including model weights and Goap weight files can't save in the repo.
 Here we offer two solustions to deal with the problem:
-### 1. Download large files from our [server](http://kiharalab.org/dove/Large_LFSS.tar.gz)
-### 2. Clone the repo from [Purdue github](https://github.itap.purdue.edu/kiharalab/DOVE)
+### 1. Download large files from our [server](http://kiharalab.org/github_data/DOVE_Large_File.tar.gz)
+Then please use the following command to extract "Best_Model" and "Goap" directory and put them in under the repo's directory.
+```
+tar -xzvf DOVE_Large_File.tar.gz
+```
+### 2. (Suggested) Clone the repo from [Purdue github](https://github.itap.purdue.edu/kiharalab/DOVE)
+```
+git lfs clone https://github.itap.purdue.edu/kiharalab/DOVE
+```
