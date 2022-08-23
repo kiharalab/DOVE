@@ -8,7 +8,7 @@
   journal={Bioinformatics}
 }
 ```
-License: GPL v3. (If you are interested in a different license, for example, for commercial use, please contact us.) 
+License: GPL v3. (If you are interested in a different license, for example, for commercial use, please contact us.)    
 Contact: dkihara@purdue.edu
 
 ## Online platform: http://kiharalab.org/dove/
