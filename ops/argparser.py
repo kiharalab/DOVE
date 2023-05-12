@@ -3,7 +3,7 @@
 # Email:xiaowang20140001@gmail.com
 #
 
-import parser
+#import parser
 import argparse
 
 def argparser():
